@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos Panamericanos | Tarea 1 David Garcia</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/stylesheet.css">
+</head>
+<body>
+
+    <header>
+        <img src="../img/mindeporte.png" width="80" alt="mindeporte" id="mindeporte">
+        <h1 id="main-header"> APP Juegos Panamericanos Santiago 2023 </h1> 
+    </header> <hr> <br>
+
+    <div class="main-container">
+        <div id="val-box" hidden>
+            <h2 id="val-msg"></h2>
+            <ul id="val-list"></ul>
+        </div>
+        <form name="myForm" method="post" enctype="multipart/form-data">
+
+            <label for="deporte" title="Deporte(s) que interesa apoyar"> Deporte </label> <br>
+            <select id="deporte" name="deporte" title="Mantenga Ctrl y click para seleccionar más de 1 opción" multiple required> 
+                <option> Clavados</option>
+                <option> Natación</option>
+                <option> Natación artística</option>
+                <option> Polo acuático</option>
+                <option> Natación en Aguas abiertas</option>
+                <option> Maratón</option>
+                <option> Marcha</option>
+                <option> Atletismo</option>
+                <option> Bádminton</option>
+                <option> Balonmano</option>
+                <option> Básquetbol</option>
+                <option> Básquetbol 3x3</option>
+                <option> Béisbol</option>
+                <option> Boxeo</option>
+                <option> Bowling</option>
+                <option> Breaking</option>
+                <option> Canotaje Slalom</option>
+                <option> Canotaje de velocidad</option>
+                <option> BMX Freestyle</option>
+                <option> BMX Racing</option>
+                <option> Mountain Bike</option>
+                <option> Ciclismo pista</option>
+                <option> Ciclismo ruta</option>
+                <option> Adiestramiento ecuestre</option>
+                <option> Evento completo ecuestre</option>
+                <option> Salto ecuestre</option>
+                <option> Escalada deportiva</option>
+                <option> Esgrima</option>
+                <option> Esquí acuático y Wakeboard</option>
+                <option> Fútbol</option>
+                <option> Gimnasia artística Masculina</option>
+                <option> Gimnasia artística Femenina</option>
+                <option> Gimnasia rítmica</option>
+                <option> Gimnasia trampolín</option>
+                <option> Golf</option>
+                <option> Hockey césped</option>
+                <option> Judo</option>
+                <option> Karate</option>
+                <option> Levantamiento de pesas</option>
+                <option> Lucha</option>
+                <option> Patinaje artístico</option>
+                <option> Skateboarding</option>
+                <option> Patinaje velocidad</option>
+                <option> Pelota vasca</option>
+                <option> Pentatlón moderno</option>
+                <option> Racquetball</option>
+                <option> Remo</option>
+                <option> Rugby 7</option>
+                <option> Sóftbol</option>
+                <option> Squash</option>
+                <option> Surf</option>
+                <option> Taekwondo</option>
+                <option> Tenis</option>
+                <option> Tenis de mesa</option>
+                <option> Tiro</option>
+                <option> Tiro con arco</option>
+                <option> Triatlón</option>
+                <option> Vela</option>
+                <option> Vóleibol</option>
+                <option> Vóleibol playa</option>
+            </select> <br>
+            
+              <label for="region" title="Región donde vive"> Región </label>
+              <select id="alimento" onchange="cargaTipo()">
+                <option value="seleccione" selected>seleccione</option>
+                <option value="Arica y Parinacota">Arica y Parinacota</option>
+                <option value="Tarapacá"> Tarapacá </option>
+                <option value="Antofagasta"> Antofagasta </option>
+                <option value="Atacama"> Atacama </option>
+                <option value="Coquimbo"> Coquimbo </option>
+                <option value="Valparaiso"> Valparaiso </option>
+                <option value="Metropolitana de Santiago"> Metropolitana de Santiago </option>
+                <option value="Libertador General Bernardo O'Higgins"> Libertador General Bernardo O'Higgins </option>
+                <option value="Maule"> Maule </option>
+                <option value="Biobío"> Biobío </option>
+                <option value="La Araucanía"> La Araucanía </option>
+                <option value="Los Ríos"> Los Ríos </option>
+                <option value="Los Lagos"> Los Lagos </option>
+                <option value="Aysén del General Carlos Ibáñez del Campo"> Aysén del General Carlos Ibáñez del Campo </option>
+                <option value="Magallanes y de la Antártica Chilena"> Magallanes y de la Antártica Chilena </option>
+                <option value="Ñuble"> Ñuble </option>
+              </select>
+              <label for="comuna" title="Comuna donde vive"> Comuna </label>
+              <select id="comuna">
+              </select> <br>
+
+            <label for="transporte" title="Modo de transporte"> Modo de transporte </label>
+            <select id="transporte" name="transporte" required>
+                <option value=""> seleccione </option>
+                <option> particular </option>
+                <option> locomoción pública </option>
+            </select> <br>
+
+            <label for="nombre" title="Nombre"> Nombre </label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez" minlength="3" maxlength="80"> <br>
+
+            <label for="email" title="direccion de correo electronico"> Email de contacto </label>
+            <input type="email" id="email" name="email" required placeholder="micorreo@mail.com" maxlength="30"> <br>
+
+            <label for="telefono"> Número celular contacto </label>
+            <input type="tel" id="telefono" name="telefono" placeholder="9 1234 5678" pattern="9 [0-9]{4} [0-9]{4}"> <br>
+
+            <label for="comentarios"> Comentarios Adicionales</label> <br>
+            <textarea id="comentarios" name="comentarios" rows="5" cols="25" maxlength="80"> </textarea> <br>
+
+            <!--ponerle name a todos los inputs, para tener acceso en el backend-->
+            <button id="hsubmit-btn" type="button"> Registrar Hincha </button>
+        </form>
+        <div id="hpopup-box" hidden>
+            <h2 id="popup-msg"></h2>
+            <ul id="popup-list"></ul>
+        </div>
+    </div>
+    <!--Agregar validacion con script de javas en esta parte-->
+    <script src="../js/validation_hincha.js"></script>
+    <!--Si no hay errores, debe aparecer un mensaje de confirmacion (Si, confirmo ; No, quiero volver al formulario)-->
+
+    <!--agregar botones-->
+</body>
+</html>
