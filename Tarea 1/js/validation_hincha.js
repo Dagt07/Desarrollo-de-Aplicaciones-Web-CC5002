@@ -286,19 +286,34 @@ const validateForm = () => {
       // make validation prompt visible
       validationBox.hidden = false;
     } else {
-      validationListElem.textContent = "";
       validationBox.hidden = true;
-      //hacer popup de confirmacion, sabemos que isValid es True, hacer condicion en torno a eso
-      let hpopup = document.getElementById("hpopup-box");
-      hpopup.hidden = false;
-      let hpopupmsg = document.getElementById("popup-msg");
-      hpopupmsg.innerText = "¿Confirma el registro de este hincha?";
+      let confirmationBox = document.getElementById("popup-box");
+      let confirmationMessageElem = document.getElementById("popup-msg");
+      
+      confirmationBox.hidden = false;
+      confirmationMessageElem.innerText = "¿Confirma el registro de este hincha?";
+      //crear botones de confirmar y denegar
+      /*
       let confirmationbtn = document.createElement("button");
       let denybtn = document.createElement("button");
+      confirmationbtn.innerText = "Confirmar";
+      denybtn.innerText = "Denegar";
       //hacerles funciones on click a esos botones
+      */
+      document.getElementById("b1").addEventListener("click", clickgotomenu);
+      document.getElementById("b2").addEventListener("click", clickgotoform);
     }
 };
+
+clickgotomenu = () => {
+  window.location.href = "index.html";
+};
+
+clickgotoform = () => {
+  window.location.href = "agregar-hincha.html";
+};
+
   
-  let submitBtn = document.getElementById("hsubmit-btn");
-  submitBtn.addEventListener("click", validateForm);
+let submitBtn = document.getElementById("hsubmit-btn");
+submitBtn.addEventListener("click", validateForm);
   
