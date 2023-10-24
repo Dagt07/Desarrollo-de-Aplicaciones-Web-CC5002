@@ -1,0 +1,22 @@
+/*Botones index.html*/
+.botones {
+    display:flex;
+    flex-direction: column; /* Esto alinea los elementos verticalmente */
+    align-items: center; /* Esto centra los elementos horizontalmente */
+    text-align: center; /* Esto centra el texto dentro de los botones */
+    justify-content: center; /* Esto ayuda a centrar los elementos verticalmente */
+}
+
+
+#b1{
+    font-size:25px;
+}
+#b2{
+    font-size:25px;
+}
+#b3{
+    font-size:25px;
+}
+#b4{
+    font-size:25px;
+}

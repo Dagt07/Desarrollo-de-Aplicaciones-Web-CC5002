@@ -1,0 +1,33 @@
+.content-table {
+    border-collapse: collapse;
+    font-size: 1.0em;
+    min-width: 400px;
+    /* alineación */
+    display:flex;
+    flex-direction: column; /* Esto alinea los elementos verticalmente */
+    align-items: center; /* Esto centra los elementos horizontalmente */
+    text-align: center; /* Esto centra el texto dentro de los botones */
+    justify-content: center;
+}
+
+.content-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.055em;
+}
+
+.content-table th, .content-table td{
+    padding: 12px 15px;
+}
+
+.content-table tbody {
+    background-color: #dddddd;
+}
+.content-table tbody tr {
+    border-bottom: 1px solid #000000;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}

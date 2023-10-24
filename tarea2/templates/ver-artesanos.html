@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} Juegos Panamericanos | Tarea 2 David Garcia {% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ver-artesanos.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <!--Mostrar listado con varias columnas de datos (tabla)-->
+    <table class="content-table" id="table">
+        <thead>
+            <tr> <!--Primera fila de la tabla, contendra los encabezados para cada valor de la tabla--> 
+                <th> Nombre </th>
+                <th> Teléfono </th>
+                <th> Comuna </th>
+                <th> Tipo Artesanías </th>
+                <th> Número Fotos </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if data %}
+                {% for artesano in data %}
+                    <tr> <!--Estas filas ya contendran data de hinchas-->
+                        <td> {{artesano.nombre}} </td>
+                        <td> {{artesano.telefono}} </td>
+                        <td> {{artesano.comuna}} </td>
+                        <td> {{artesano.tipo_artesania}} </td>
+                        <td> <img src="{{artesano.path_image}}"  alt="Placeholder Image" width="150"> </td>
+                        <td> <a href="{{ url_for('info_artesano', artesano_id = artesano.artesano_id[0]) }}"> Ver detalles</a> </td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ url_for('static', filename='js/ver-artesanos.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %} Juegos Panamericanos | Tarea 2 David Garcia {% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ver-hinchas.css') }}">
+{% endblock %}
+
+{% block content %}
+    <!--Mostrar listado con varias columnas de datos (tabla)-->
+    <table class="content-table" id="table">
+        <thead>
+            <tr> <!--Primera fila de la tabla, contendra los encabezados para cada valor de la tabla--> 
+                <th> Nombre </th>
+                <th> Comuna </th>
+                <th> Deporte </th>
+                <th> Modo transporte </th>
+                <th> Número celular </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Estas filas ya contendran data de hinchas-->
+            <tr> 
+                <td> Juan Pérez </td>
+                <td> Cerrillos</td>
+                <td> Balonmano</td>
+                <td> particular</td>
+                <td> 9 1234 5678</td> 
+            </tr>
+            <tr>  
+                <td> Alicia Machado</td>
+                <td> Lo Prado</td>
+                <td> Judo</td>
+                <td> particular</td>
+                <td> 9 5678 1234</td> </a>
+            </tr>
+            <tr> 
+                <td> Jorge Ocampo</td>
+                <td> Santiago</td>
+                <td> Triatlón</td>
+                <td> particular</td>
+                <td> 9 6678 2222</td>
+            </tr>  </a>
+            <tr> 
+                <td> María González</td>
+                <td> Lo Prado</td>
+                <td> Vóleibol</td>
+                <td> L. Pública</td>
+                <td> 9 5678 1234</td>
+            </tr>
+            <tr> 
+                <td> Luis Villa</td>
+                <td> Las Condes</td>
+                <td> Tiro con Arco</td>
+                <td> particular</td>
+                <td> 9 3412 8765</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ url_for('static', filename= 'js/ver-hinchas.js') }}"></script>
+{% endblock %}
