@@ -1,0 +1,32 @@
+/*Botones index.html*/
+.botones {
+    display:flex;
+    flex-direction: column ; /* Esto alinea los elementos verticalmente */
+    align-items: center; /* Esto centra los elementos horizontalmente */
+    text-align: center; /* Esto centra el texto dentro de los botones */
+    justify-content: center; /* Esto ayuda a centrar los elementos verticalmente */
+    
+}
+
+/* ancho fijo para los botones */
+.botones button {
+    width: 250px; 
+    margin: 10px; 
+}
+
+#b1{
+    font-size:25px;
+    background-color: rgba(170, 170, 255, 0.335);
+}
+#b2{
+    font-size:25px;
+    background-color: rgba(170, 170, 255, 0.335);
+}
+#b3{
+    font-size:25px;
+    background-color: rgba(170, 170, 255, 0.335);
+}
+#b4{
+    font-size:25px;
+    background-color: rgba(170, 170, 255, 0.335);
+}

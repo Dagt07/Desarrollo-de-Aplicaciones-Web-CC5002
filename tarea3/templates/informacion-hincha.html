@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Juegos Panamericanos | Tarea 3 David Garcia {% endblock %}
+{% block css %} <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/info-hincha.css') }}"> {% endblock %}
+
+{% block content %} 
+
+    <div class="main-container">
+        <div class="infohincha"> 
+            <h2> Información del hincha seleccionado </h2>
+            <h3> Nombre: {{hincha_info[0]}} </h3>
+            <h3> Comuna: {{hincha_info[1]}} </h3>
+            <h3> Deporte: {{hincha_info[3]}} </h3>
+            <h3> Modo de transporte: {{hincha_info[2]}} </h3>
+            <h3> Teléfono {{hincha_info[5]}} </h3>   
+        </div>
+        <div class="botones">
+            <button id="b1"> Listado Hinchas </button>
+            <button id="b2"> Menu Principal </button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ url_for('static', filename='js/informacion-hincha.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} Juegos Panamericanos | Tarea 3 David Garcia {% endblock %}
+{% block css %} {% endblock %}
+   
+{% block content %}    
+<div class="stats-container">
+    <!-- First Chart, pie chart for the artesanos-->
+    <figure class="highcharts-figure">
+        <div id="container1"></div>
+    </figure>
+    <!-- Second Chart, column chart for the hinchas-->
+    <figure class="highcharts-figure">
+        <div id="container2"></div>
+    </figure>
+</div>
+
+{% endblock content %}
+
+{% block javascript %}
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="{{url_for('static', filename='js/stats.js')}}"></script>
+{% endblock %}

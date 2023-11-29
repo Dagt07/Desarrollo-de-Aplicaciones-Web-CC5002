@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %} Juegos Panamericanos | Tarea 3 David Garcia {% endblock %}
+{% block css %} {% endblock %}
+
+{% block content %}    
+    <div class="main-container">
+        <div id="val-box" hidden>
+            <h2 id="val-msg"></h2>
+            <ul id="val-list"></ul>
+        </div>
+        
+        <form name="myForm" id="form_artesano" action="/agregar-artesano" method="post" enctype="multipart/form-data">
+
+            <label for="region" title="Región donde vive"> Región </label>
+              <select id="alimento" name="region" onchange="cargaTipo()">
+                <option value="seleccione" selected>seleccione</option>
+                <option value="Región Arica y Parinacota"> Región Arica y Parinacota</option>
+                <option value="Región de Tarapacá"> Región de Tarapacá </option>
+                <option value="Región de Antofagasta"> Región de Antofagasta </option>
+                <option value="Región de Atacama"> Región de Atacama </option>
+                <option value="Región de Coquimbo "> Región de Coquimbo </option>
+                <option value="Región de Valparaíso"> Región de Valparaíso </option>
+                <option value="Región Metropolitana de Santiago "> Región Metropolitana de Santiago </option>
+                <option value="Región del Libertador Bernardo Ohiggins"> Región del Libertador Bernardo Ohiggins </option>
+                <option value="Región del Maule"> Región del Maule </option>
+                <option value="Región del Biobío"> Región del Biobío </option>
+                <option value="Región de La Araucanía"> Región de La Araucanía </option>
+                <option value="Región de Los Ríos"> Región de Los Ríos </option>
+                <option value="Región de Los Lagos"> Región de Los Lagos </option>
+                <option value="Región Aisén del General Carlos Ibáñez del Campo"> Región Aisén del General Carlos Ibáñez del Campo </option>
+                <option value="Región de Magallanes y la Antártica Chilena"> Región de Magallanes y la Antártica Chilena </option>
+                <option value="Región del Ñuble"> Región del Ñuble </option>
+              </select>
+              <label for="comuna" title="Comuna donde vive"> Comuna </label>
+              <select id="comuna" name="comuna">
+              </select> <br>
+
+            <label for="artesania" title="Tipo de artesania"> Tipo artesanía </label> <br>
+            <select id="artesania" name="artesania" title="Mantenga Ctrl y click para seleccionar más de 1 opción" multiple required> 
+                <option> mármol</option>
+                <option> madera</option>
+                <option> cerámica</option>
+                <option> mimbre</option>
+                <option> metal</option>
+                <option> cuero</option>
+                <option> telas</option>
+                <option> joyas</option>
+                <option> otro</option>
+            </select> <br>
+
+            <label for="descripcion"> Descripcion de artesanias </label> <br>
+            <textarea id="descripcion" name="descripcion" rows="4" cols="50" maxlength="80"> </textarea> <br>
+
+            <label for="fotos" title="Fotos de artesanias"> Fotos de artesanias </label>
+            <input type="file" id="fotos" name="fotos" multiple accept="image/*,.pdf"> <br> <!-- /* acepta todos los formatos conocidos de imagen -->
+
+            <label for="nombre" title="Nombre Artesano"> Nombre Artesano </label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez" minlength="3" maxlength="80"> <br>
+
+            <label for="email" title="direccion de correo electronico"> Email de contacto </label>
+            <input type="email" id="email" name="email" required placeholder="micorreo@mail.com" maxlength="30"> <br>
+
+            <label for="telefono"> Número celular contacto </label>
+            <input type="tel" id="telefono" name="telefono" placeholder="9 1234 5678" pattern="9 [0-9]{4} [0-9]{4}"> <br>
+
+            <!--ponerle name a todos los inputs, para tener acceso en el backend-->
+            <button id="asubmit-btn" type="button"> Registrar Artesano </button>
+        </form>
+        <div id="popup-box" hidden>
+            <h2 id="popup-msg"></h2>
+            <button id="b1"> Sí, confirmo </button>
+            <button id="b2"> No, quiero volver al formulario </button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src=" {{ url_for('static', filename='js/validation_artesano.js') }}"></script>
+    <!--Si no hay errores, debe aparecer un mensaje de confirmacion (Si, confirmo ; No, quiero volver al formulario)-->
+{% endblock %}

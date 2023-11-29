@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+        {% block css %}{% endblock %}
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename= 'img/favicon.png') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+        <header>
+            <img src="{{ url_for('static', filename='img/mindeporte.png') }}" width="80" alt="mindeporte" id="mindeporte">
+            <div class="navbar">
+                <h1 id="main-header"> APP Juegos Panamericanos Santiago 2023 </h1>
+                <a class="navbar-page" href="{{ url_for('index') }}"> Home </a>
+                <a class="navbar-page" href="{{ url_for('stats') }}"> Stats </a>
+                <a class="navbar-page" > About </a>
+            </div>
+        </header> <hr> <br>
+    </head>
+
+    <body>
+        {% block content %}{% endblock %}
+        {% block javascript %}{% endblock %}
+    </body>
+</html>

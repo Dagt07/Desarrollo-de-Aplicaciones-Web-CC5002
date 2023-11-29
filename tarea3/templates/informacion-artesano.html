@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %} Juegos Panamericanos | Tarea 3 David Garcia {% endblock %}
+{% block css %} <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/info-artesano.css') }}"> {% endblock %}
+
+{% block content %} 
+    <div class="main-container">
+        <div class="infoartesano"> 
+            <h2> Información del artesano seleccionado </h2>
+            <h3> Nombre: {{artesano_info[0]}} </h3>
+            <h3> Teléfono: {{artesano_info[5]}} </h3>
+            <h3> Region: {{artesano_info[1]}} </h3>
+            <h3> Tipo de Artesanias: {{artesano_info[2]}} </h3>
+            <h3> Fotos: <br> <img src="{{url_for('static', filename='uploads/' + artesano_info[3])}} " height="640" width="480" alt="foto artesano 2" id="imagen">  </h3>    
+        </div>
+        <div class="botones">
+            <button id="b1"> Listado Artesanos </button>
+            <button id="b2"> Menu Principal </button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ url_for('static', filename='js/informacion-artesano.js') }} "></script>
+{% endblock %}

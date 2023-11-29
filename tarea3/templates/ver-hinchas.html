@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %} Juegos Panamericanos | Tarea 3 David Garcia {% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ver-hinchas.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="main-container"> 
+    <!--Mostrar listado con varias columnas de datos (tabla)-->
+    <table class="content-table" id="table">
+        <thead>
+            <tr> <!--Primera fila de la tabla, contendra los encabezados para cada valor de la tabla--> 
+                <th> Nombre </th>
+                <th> Comuna </th>
+                <th> Deporte </th>
+                <th> Modo transporte </th>
+                <th> Número Celular </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if data %}
+                {% for hincha in data %}
+                    <tr> <!--Estas filas ya contendran data de hinchas-->
+                        <td> {{hincha.nombre}} </td>
+                        <td> {{hincha.comuna}} </td>
+                        <td> {{hincha.deporte}} </td>
+                        <td> {{hincha.modo_transporte}} </td>
+                        <td> {{hincha.telefono}} </td>
+                        <td> <a href="{{ url_for('info_hincha', hincha_id = hincha.hincha_id[0]) }}"> Ver detalles</a> </td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+        <div class="botones_paginacion">
+            <p> Páginas </p>
+            <button id="b1"> 1 </button>
+            <button id="b2"> 2 </button>     
+        </div>
+    </table>
+</div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ url_for('static', filename= 'js/ver-hinchas.js') }}"></script>
+{% endblock %}

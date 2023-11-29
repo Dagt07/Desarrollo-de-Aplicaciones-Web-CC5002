@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} Juegos Panamericanos | Tarea 3 David Garcia {% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}    
+    <!--Este archivo actua como home page, conteniendo un menu que permite acceder a los restantes archivos.-->
+    <!--Opciones del menu deben ser: "Registrar Hincha", "Registrar Artesano", "Ver listado de hinchas" y "Ver listado de artesanos"--> 
+    <div class="botones">
+        <button id="b1"> Registrar Hincha </button>
+        <button id="b2"> Registrar Artesano </button>
+        <button id="b3"> Ver listado de hinchas </button>
+        <button id="b4"> Ver listado de artesanos </button>     
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ url_for('static', filename= 'js/index.js') }}"></script>
+{% endblock %}
